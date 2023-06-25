@@ -1,1 +1,1 @@
-# Licenta2023
+# Roga_Andrei_Aplicație_Practică_INFOZI_Licență

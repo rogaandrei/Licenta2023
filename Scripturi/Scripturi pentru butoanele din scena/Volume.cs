@@ -38,7 +38,7 @@ public class Volume: MonoBehaviour
         if (change == InputDeviceChange.Added || change == InputDeviceChange.Removed)
         {
             float storedVolume = PlayerPrefs.GetFloat(VolumePlayerPrefsKey, 1f); 
-            volumeSlider.value = storedVolume; // Actualizează valoarea sliderului cu volumul stocat
+            volumeSlider.value = storedVolume; 
         }
     }
 }

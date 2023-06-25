@@ -24,7 +24,6 @@ public class Reset : MonoBehaviour
     private void ResetSceneWithDelay()
     {
         textDrona.SetActive(false);
-        //textDrona.text = ""; // Clear the message
         ResetScene();
     }
 

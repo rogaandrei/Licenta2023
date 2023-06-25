@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Sunet_in_aer : MonoBehaviour
 {
-    public AudioSource audioSource; // Trageți aici componenta Audio Source din Inspector
+    public AudioSource audioSource; 
 
     private bool isRightTriggerPressed = false;
     private bool isLeftTriggerPressed = false;
@@ -12,7 +12,6 @@ public class Sunet_in_aer : MonoBehaviour
 
     private void Awake()
     {
-        // Păstrăm volumul inițial al sunetului
         if (audioSource != null)
         {
             initialVolume = audioSource.volume;
@@ -24,10 +23,8 @@ public class Sunet_in_aer : MonoBehaviour
     {
         if (Gamepad.current != null)
         {
-            // Verificăm apăsarea butonului dreapta (rightTrigger)
             if (Gamepad.current.rightTrigger.isPressed && !isRightTriggerPressed)
             {
-                // Redăm sunetul doar când butonul este apăsat pentru prima dată
                 isRightTriggerPressed = true;
 
                 if (!isSoundPlaying)
@@ -37,7 +34,6 @@ public class Sunet_in_aer : MonoBehaviour
             }
             else if (!Gamepad.current.rightTrigger.isPressed && isRightTriggerPressed)
             {
-                // Oprim sunetul când butonul nu mai este apăsat
                 isRightTriggerPressed = false;
 
                 if (isSoundPlaying)
@@ -46,10 +42,8 @@ public class Sunet_in_aer : MonoBehaviour
                 }
             }
 
-            // Verificăm apăsarea butonului stânga (leftTrigger)
             if (Gamepad.current.leftTrigger.isPressed && !isLeftTriggerPressed)
             {
-                // Redăm sunetul doar când butonul este apăsat pentru prima dată
                 isLeftTriggerPressed = true;
 
                 if (!isSoundPlaying)
@@ -59,7 +53,6 @@ public class Sunet_in_aer : MonoBehaviour
             }
             else if (!Gamepad.current.leftTrigger.isPressed && isLeftTriggerPressed)
             {
-                // Oprim sunetul când butonul nu mai este apăsat
                 isLeftTriggerPressed = false;
 
                 if (isSoundPlaying)

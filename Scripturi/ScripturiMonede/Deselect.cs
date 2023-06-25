@@ -7,14 +7,12 @@ public class Deselect : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Deselect object
             Deselect1();
         }
     }
 
     private void Deselect1()
     {
-        // Implementați aici logica pentru deselectarea obiectului
         Debug.Log("Object deselected!");
     }
 }

@@ -17,17 +17,13 @@ public class CameraSwitcher : MonoBehaviour
 
     private void OnButtonSouthPressed(InputAction.CallbackContext context)
     {
-        // Increment the current camera index
         currentCameraIndex++;
 
-        // Check if we have exceeded the number of available cameras
         if (currentCameraIndex >= cameras.Length)
         {
-            // If so, reset the index to 0
             currentCameraIndex = 0;
         }
 
-        // Activate the current camera and deactivate the other cameras
         for (int i = 0; i < cameras.Length; i++)
         {
             cameras[i].gameObject.SetActive(i == currentCameraIndex);

@@ -8,13 +8,13 @@ public class Elice : MonoBehaviour
 
     private void Start()
     {
-        // Obține referința la acțiunea de apăsare a butonului dreapta
+      
         InputAction rightTriggerAction = new InputAction("RightTrigger", binding: "<Gamepad>/rightTrigger");
         rightTriggerAction.performed += OnRightTrigger;
         rightTriggerAction.canceled += OnRightTrigger;
         rightTriggerAction.Enable();
 
-        // Obține referința la acțiunea de apăsare a butonului stânga
+        
         InputAction leftTriggerAction = new InputAction("LeftTrigger", binding: "<Gamepad>/leftTrigger");
         leftTriggerAction.performed += OnLeftTrigger;
         leftTriggerAction.canceled += OnLeftTrigger;
@@ -25,7 +25,7 @@ public class Elice : MonoBehaviour
     {
         if (isRotating)
         {
-            // Rotirea elicei
+           
             transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
         }
     }
@@ -58,7 +58,7 @@ public class Elice : MonoBehaviour
 
     private void OnDisable()
     {
-        // Dezactivează acțiunile de input
+        
         InputAction rightTriggerAction = new InputAction("RightTrigger", binding: "<Gamepad>/rightTrigger");
         rightTriggerAction.Disable();
 

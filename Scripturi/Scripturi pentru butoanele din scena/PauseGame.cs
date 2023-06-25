@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class PauseGame : MonoBehaviour
 {
-    public Text pauseText; // Referință la componenta Text pentru a afișa textul de pauză
+    public Text pauseText; 
     private bool isPaused = false; // Indicator pentru pauză
 
     private void Start()
     {
-        pauseText.gameObject.SetActive(false); // Dezactivează textul la început
+        pauseText.gameObject.SetActive(false); 
     }
 
     private void Update()
@@ -29,15 +29,15 @@ public class PauseGame : MonoBehaviour
 
     private void Pause()
     {
-        Time.timeScale = 0f; // Pauzează timpul jocului
+        Time.timeScale = 0f; 
         isPaused = true;
-        pauseText.gameObject.SetActive(true); // Activează textul de pauză
+        pauseText.gameObject.SetActive(true); 
         Debug.Log("Game paused!");
     }
 
     private void ResumeGame()
     {
-        Time.timeScale = 1f; // Reia timpul jocului
+        Time.timeScale = 1f; 
         isPaused = false;
         pauseText.gameObject.SetActive(false); // Dezactivează textul de pauză
         Debug.Log("Game resumed!");

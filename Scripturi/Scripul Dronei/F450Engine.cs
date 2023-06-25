@@ -22,9 +22,6 @@ namespace F450 {
     }
   
     public void UpdateEngine(Rigidbody rigidbody, F450Inputs input) {
-      /* Opposite force:
-      *  You can add to engineForce a force opposite to the gravity;this makes flying the UAV a bit easier.
-      *  F = -Fg = rigidbody.mass * Physics.gravity.magnitude*/
       
       float engineForce = input.Throttle * _maxPower / 4f;
 

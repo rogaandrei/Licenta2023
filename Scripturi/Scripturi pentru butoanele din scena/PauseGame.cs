@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PauseGame : MonoBehaviour
 {
     public Text pauseText; 
-    private bool isPaused = false; // Indicator pentru pauză
+    private bool isPaused = false; 
 
     private void Start()
     {
@@ -39,7 +39,7 @@ public class PauseGame : MonoBehaviour
     {
         Time.timeScale = 1f; 
         isPaused = false;
-        pauseText.gameObject.SetActive(false); // Dezactivează textul de pauză
+        pauseText.gameObject.SetActive(false); 
         Debug.Log("Game resumed!");
     }
 }

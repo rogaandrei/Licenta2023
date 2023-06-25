@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class Volume: MonoBehaviour
 {
-    public Slider volumeSlider; // Referință la componenta Slider pentru volum
+    public Slider volumeSlider; 
 
-    private const string VolumePlayerPrefsKey = "Volume"; // Cheia pentru stocarea volumului în PlayerPrefs
+    private const string VolumePlayerPrefsKey = "Volume"; 
 
     private void Awake()
     {
@@ -15,18 +15,17 @@ public class Volume: MonoBehaviour
 
     private void Start()
     {
-        float storedVolume = PlayerPrefs.GetFloat(VolumePlayerPrefsKey, 1f); // Recuperează volumul din PlayerPrefs sau folosește valoarea implicită (1f)
+        float storedVolume = PlayerPrefs.GetFloat(VolumePlayerPrefsKey, 1f); 
 
-        volumeSlider.value = storedVolume; // Setează valoarea sliderului la volumul stocat
+        volumeSlider.value = storedVolume; 
 
         volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
     }
 
     private void OnVolumeChanged(float volume)
     {
-        PlayerPrefs.SetFloat(VolumePlayerPrefsKey, volume); // Salvează volumul în PlayerPrefs
+        PlayerPrefs.SetFloat(VolumePlayerPrefsKey, volume); 
 
-        // Aplică volumul în toate componentele AudioSource din scenele respective
         var audioSources = FindObjectsOfType<AudioSource>();
         foreach (var audioSource in audioSources)
         {
@@ -38,7 +37,7 @@ public class Volume: MonoBehaviour
     {
         if (change == InputDeviceChange.Added || change == InputDeviceChange.Removed)
         {
-            float storedVolume = PlayerPrefs.GetFloat(VolumePlayerPrefsKey, 1f); // Recuperează volumul din PlayerPrefs sau folosește valoarea implicită (1f)
+            float storedVolume = PlayerPrefs.GetFloat(VolumePlayerPrefsKey, 1f); 
             volumeSlider.value = storedVolume; // Actualizează valoarea sliderului cu volumul stocat
         }
     }

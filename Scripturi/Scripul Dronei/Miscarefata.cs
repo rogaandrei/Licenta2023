@@ -34,11 +34,9 @@ public class Miscarefata : MonoBehaviour
     {
         if (isLeftTriggerPressed)
         {
-            // Set the movement velocity to move the drone forward at its current height
             Vector3 movement = transform.forward * movementSpeed;
             movement.y = droneRigidbody.velocity.y;
 
-            // Set the vertical velocity to zero to prevent upward movement
             movement.y = 0f;
 
             droneRigidbody.velocity = movement;

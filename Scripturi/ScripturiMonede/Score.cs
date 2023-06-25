@@ -6,21 +6,21 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public Text scoreText; // Referință la componenta Text pentru a afișa scorul
-    public Text notificationText; // Referință la componenta Text pentru a afișa notificarea
-    private int score = 0; // Scorul curent
-    public List<GameObject> coins; // Lista de obiecte monedă
-    public string sceneName; // Numele scenei către care să te întorci
-    private bool notificationActive = false; // Starea notificării
+    public Text scoreText; 
+    public Text notificationText; 
+    private int score = 0; 
+    public List<GameObject> coins; 
+    public string sceneName; 
+    private bool notificationActive = false; 
 
     private void OnTriggerEnter(Collider other)
     {
         if (coins.Contains(other.gameObject))
         {
-            coins.Remove(other.gameObject); // Eliminăm moneda din lista
-            other.gameObject.SetActive(false); // Dezactivăm moneda atinsă
-            score++; // Incrementăm scorul cu 1
-            scoreText.text = "Score: " + score.ToString(); // Actualizăm textul afișat cu noul scor
+            coins.Remove(other.gameObject); 
+            other.gameObject.SetActive(false); 
+            score++; 
+            scoreText.text = "Score: " + score.ToString(); 
 
             if (score == 10)
             {
@@ -31,14 +31,14 @@ public class Score : MonoBehaviour
 
     private IEnumerator ShowNotificationAndLoadScene()
     {
-        notificationActive = true; // Activează notificarea
-        yield return new WaitForSeconds(3f); // Așteaptă timp de 3 secunde
-        notificationActive = false; // Dezactivează notificarea
-        SceneManager.LoadScene(sceneName); // Încarcă scena cu numele specificat în variabila sceneName
+        notificationActive = true; 
+        yield return new WaitForSeconds(3f); 
+        notificationActive = false;
+        SceneManager.LoadScene(sceneName); 
     }
 
     private void Update()
     {
-        notificationText.gameObject.SetActive(notificationActive); // Activează sau dezactivează notificarea în funcție de starea curentă
+        notificationText.gameObject.SetActive(notificationActive); 
     }
 }
